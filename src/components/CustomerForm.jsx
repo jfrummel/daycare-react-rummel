@@ -1,53 +1,65 @@
 import React, { Component } from 'react';
 
+
+
 class CustomerForm extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            firstName: "",
-            lastName: "",
-            numOfChildren: 0,
-            hourlyRate: ""
+            firstName: props.customer ? props.customer.firstName : "",
+            lastName: props.customer ? props.customer.lastName : "",
+            numOfChildren: props.customer ? props.customer.numOfChildren : 0,
+            hourlyRate: props.customer ? props.customer.hourlyRate.toString() : "",
+            error: ""
         }
     }
 
     onFirstNameChange = (e) => {
-        this.setState(() => ({
-            firstName: e.target.value
-        }));
+        const firstName = e.target.value;
+        this.setState(() => ({ firstName }));
     };
 
     onLastNameChange = (e) => {
-        this.setState(() => ({
-            lastName: e.target.value
-        }));
+        const lastName = e.target.value;
+        this.setState(() => ({ lastName }));
     };
 
     onNumChildrenChange = (e) => {
-        this.setState(() => ({
-            numOfChildren: e.target.value
-        }));
+        const numOfChildren = e.target.value;
+        this.setState(() => ({ numOfChildren }));
     };
 
     onHourlyRateChange = (e) => {
-        this.setState(() => ({
-            hourlyRate: e.target.value
-        }));
+        const hourlyRate = e.target.value;
+        this.setState(() => ({ hourlyRate }));
     };
 
     onSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+
+        if (!this.state.firstName || !this.state.lastName) {
+            this.setState(() => ({ error: "First and Last Name Required" }))
+        } else {
+            this.setState(() => ({ error: "" }));
+            this.props.onSubmit({
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                numOfChildren: this.state.numOfChildren,
+                hourlyRate: this.state.hourlyRate
+            });
+        };
     };
 
     render() {
         return (
             <form onSubmit={this.onSubmit}>
+                {this.state.error && <p>{this.state.error}</p>}
                 <input
                     type="text"
                     value={this.state.firstName}
                     onChange={this.onFirstNameChange}
+                    autoFocus
                 />
                 <input
                     type="text"
@@ -64,7 +76,7 @@ class CustomerForm extends Component {
                     value={this.state.hourlyRate}
                     onChange={this.onHourlyRateChange}
                 />
-                <button>Add Customer</button>
+                <button>{this.props.buttonText}</button>
             </form>
         );
     }

@@ -20,5 +20,6 @@ export const removeCustomer = ({ id } = {}) => ({
 
 export const editCustomer = (id, updates) => ({
     type: "EDIT_CUSTOMER",
-    id, updates
+    id,
+    updates
 });

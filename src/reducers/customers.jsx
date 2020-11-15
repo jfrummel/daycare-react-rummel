@@ -7,7 +7,7 @@ const customerReducer = (state = customerDefaultState, action) => {
         case "ADD_CUSTOMER":
             return [...state, action.customer];
         case "REMOVE_CUSTOMER":
-            return state.filter(({ id }) => id !== action.customer.id);
+            return state.filter(({ id }) => id !== action.id);
         case "EDIT_CUSTOMER":
             return state.map((customer) => {
                 if (customer.id === action.id) {
