@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders form with customer values 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    onChange={[Function]}
+    type="text"
+    value="Lauren"
+  />
+  <input
+    onChange={[Function]}
+    type="text"
+    value="Victoria"
+  />
+  <input
+    onChange={[Function]}
+    type="number"
+    value={7}
+  />
+  <input
+    onChange={[Function]}
+    type="text"
+    value="3"
+  />
+  <button />
+</form>
+`;
+
+exports[`renders form with default values 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <input
+    onChange={[Function]}
+    type="number"
+    value={0}
+  />
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <button />
+</form>
+`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders nav componet 1`] = `
+<nav>
+  <NavLink
+    activeClassName="activeLink"
+    exact={true}
+    to="/"
+  >
+    Home
+  </NavLink>
+  <NavLink
+    activeClassName="activeLink"
+    to="/about"
+  >
+    About
+  </NavLink>
+  <NavLink
+    activeClassName="activeLink"
+    to="/contact"
+  >
+    Contact
+  </NavLink>
+</nav>
+`;

@@ -4,15 +4,17 @@ import { getVisibleCustomers } from '../selectors/customers';
 import CustomerListFilters from './CustomerListFilters';
 import CustomerListItem from './CustomerListItem';
 
-const CustomerList = (props) => (
+export const CustomerList = (props) => (
     <div>
         <CustomerListFilters />
-        <h1>Customer List</h1>
-        <ul>
-            {props.customers.map((customer) => {
-                return <CustomerListItem key={customer.id} customer={customer} />
-            })}
-        </ul>
+        {props.customers.length === 0 ? <h3>No Customers found</h3> :
+            <ul>
+                {props.customers.map((customer) => {
+                    return <CustomerListItem key={customer.id} customer={customer} />
+                })}
+            </ul>
+        }
+
     </div>
 );
 

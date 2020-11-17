@@ -10,7 +10,7 @@ class CustomerForm extends Component {
             firstName: props.customer ? props.customer.firstName : "",
             lastName: props.customer ? props.customer.lastName : "",
             numOfChildren: props.customer ? props.customer.numOfChildren : 0,
-            hourlyRate: props.customer ? props.customer.hourlyRate.toString() : "",
+            hourlyRate: props.customer ? (props.customer.hourlyRate.toString()) : "",
             error: ""
         }
     }
@@ -32,7 +32,9 @@ class CustomerForm extends Component {
 
     onHourlyRateChange = (e) => {
         const hourlyRate = e.target.value;
-        this.setState(() => ({ hourlyRate }));
+        if (!hourlyRate || hourlyRate.match(/^\d{1,}(\.\d{0,2})?$/)) {
+            this.setState(() => ({ hourlyRate }));
+        }
     };
 
     onSubmit = (e) => {
@@ -46,7 +48,7 @@ class CustomerForm extends Component {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 numOfChildren: this.state.numOfChildren,
-                hourlyRate: this.state.hourlyRate
+                hourlyRate: parseFloat(this.state.hourlyRate)
             });
         };
     };

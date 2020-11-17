@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders no customers found with no data 1`] = `
+<div>
+  <Connect(CustomerListFilters) />
+  <h3>
+    No Customers found
+  </h3>
+</div>
+`;
+
+exports[`returns customer list with data 1`] = `
+<div>
+  <Connect(CustomerListFilters) />
+  <ul>
+    <CustomerListItem
+      customer={
+        Object {
+          "firstName": "Trajan",
+          "hourlyRate": 1,
+          "id": "1",
+          "lastName": "Alexander",
+          "numOfChildren": 3,
+        }
+      }
+      key="1"
+    />
+    <CustomerListItem
+      customer={
+        Object {
+          "firstName": "Lauren",
+          "hourlyRate": 3,
+          "id": "2",
+          "lastName": "Victoria",
+          "numOfChildren": 7,
+        }
+      }
+      key="2"
+    />
+    <CustomerListItem
+      customer={
+        Object {
+          "firstName": "Tammy",
+          "hourlyRate": 6,
+          "id": "3",
+          "lastName": "Rae",
+          "numOfChildren": 2,
+        }
+      }
+      key="3"
+    />
+  </ul>
+</div>
+`;

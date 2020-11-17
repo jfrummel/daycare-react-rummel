@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders footer 1`] = `
+<footer>
+  <p>
+    © JR Designs 2020
+  </p>
+</footer>
+`;

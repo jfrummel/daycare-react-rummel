@@ -37,3 +37,9 @@ test("edits a customer with valid id", () => {
     const result = customerReducer(customers, { type: "EDIT_CUSTOMER", id: customers[2].id, updates })
     expect(result[2].hourlyRate).toBe(25);
 });
+
+test("returns state when editing customer with invalid id", () => {
+    const updates = { hourlyRate: 25 };
+    const result = customerReducer(customers, { type: "EDIT_CUSTOMER", id: "a", updates });
+    expect(result).toEqual(customers);
+});

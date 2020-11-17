@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders list item with correct data 1`] = `
+<li>
+  <Link
+    to="edit/1"
+  >
+    Trajan
+     
+    Alexander
+  </Link>
+  <p>
+    Number of children: 
+    3
+  </p>
+  <p>
+    Hourly rate: $
+    1
+  </p>
+</li>
+`;
