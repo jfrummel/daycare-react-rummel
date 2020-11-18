@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles set text filter correctly 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`renders customer list filters component correctly 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`renders customer list filters component correctly with alt filters 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    type="text"
+    value="Trajan"
+  />
+</div>
+`;
