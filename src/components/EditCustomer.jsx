@@ -1,29 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { editCustomer, removeCustomer } from '../actions/customers';
 import CustomerForm from './CustomerForm';
 
-const EditCustomer = (props) => (
-    <div>
-        <h3>Edit Customer</h3>
-        <CustomerForm
-            customer={props.customer}
-            buttonText="Save Expense"
-            onSubmit={(customer) => {
-                props.dispatch(editCustomer(props.customer.id, customer));
-                props.history.push("/customer_list");
-            }}
-        />
-        <button
-            onClick={() => {
-                props.dispatch(removeCustomer({ id: props.customer.id }));
-                props.history.push("/customer_list");
-            }}
-        >
-            Remove
+export class EditCustomer extends Component {
+
+    onSubmit = (customer) => {
+        this.props.editCustomer(this.props.customer.id, customer);
+        this.props.history.push("/customer_list");
+    };
+
+    onRemove = () => {
+        this.props.removeCustomer({ id: this.props.customer.id });
+        this.props.history.push("/customer_list");
+    }
+
+    render() {
+        return (
+            <div>
+                <h3>Edit Customer</h3>
+                <CustomerForm
+                    customer={this.props.customer}
+                    buttonText="Save Expense"
+                    onSubmit={this.onSubmit}
+                />
+                <button
+                    onClick={this.onRemove}
+                >
+                    Remove
         </button>
-    </div>
-);
+            </div>
+        );
+    }
+};
+
+const mapDispatchToProps = (dispatch, props) => ({
+    editCustomer: (id, customer) => dispatch(editCustomer(id, customer)),
+    removeCustomer: (customer) => dispatch(removeCustomer(customer))
+});
 
 const mapStateToProps = (state, props) => {
     return {
@@ -31,4 +45,4 @@ const mapStateToProps = (state, props) => {
     }
 };
 
-export default connect(mapStateToProps)(EditCustomer);
+export default connect(mapStateToProps, mapDispatchToProps)(EditCustomer);

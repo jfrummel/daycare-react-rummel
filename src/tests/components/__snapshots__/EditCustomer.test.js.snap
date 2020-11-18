@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders edit customer component correctly 1`] = `
+<div>
+  <h3>
+    Edit Customer
+  </h3>
+  <CustomerForm
+    buttonText="Save Expense"
+    customer={
+      Object {
+        "firstName": "Lauren",
+        "hourlyRate": 3,
+        "id": "2",
+        "lastName": "Victoria",
+        "numOfChildren": 7,
+      }
+    }
+    onSubmit={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+</div>
+`;
