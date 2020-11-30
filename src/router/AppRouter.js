@@ -1,7 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import 'normalize.css/normalize.css';
-import '../styles/styles.scss';
 import HomePage from '../components/HomePage';
 import About from '../components/About';
 import AddCustomer from '../components/AddCustomer';
@@ -11,6 +9,8 @@ import EditCustomer from '../components/EditCustomer';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 import NotFound from '../components/NotFound';
+import 'normalize.css/normalize.css';
+import '../styles/styles.scss';
 
 const AppRouter = () => (
   <BrowserRouter>

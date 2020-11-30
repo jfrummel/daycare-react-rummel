@@ -60,22 +60,26 @@ class CustomerForm extends Component {
                 <input
                     type="text"
                     value={this.state.firstName}
+                    placeholder="First Name"
                     onChange={this.onFirstNameChange}
                     autoFocus
                 />
                 <input
                     type="text"
                     value={this.state.lastName}
+                    placeholder="Last Name"
                     onChange={this.onLastNameChange}
                 />
                 <input
                     type="number"
                     value={this.state.numOfChildren}
+                    placeholder="Number of Children"
                     onChange={this.onNumChildrenChange}
                 />
                 <input
                     type="text"
                     value={this.state.hourlyRate}
+                    placeholder="Hourly Rate"
                     onChange={this.onHourlyRateChange}
                 />
                 <button>{this.props.buttonText}</button>

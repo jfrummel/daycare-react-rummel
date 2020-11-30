@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import configureStore from './store/configureStore';
 import { getVisibleCustomers } from './selectors/customers';
 import { addCustomer } from './actions/customers';
+import './firebase/firebase';
 
 
 
